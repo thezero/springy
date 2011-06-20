@@ -35,7 +35,7 @@ jQuery.fn.springy = function(params) {
     var repulsion = params.repulsion || 400.0;
     var damping = params.damping || 0.5;
 
-    var enablednd = params.enableDND || true;
+    var disablednd = params.disableDND || false;
 
     var canvas = this[0];
     var ctx = canvas.getContext("2d");
@@ -77,7 +77,7 @@ jQuery.fn.springy = function(params) {
     var nearest = null;
     var dragged = null;
 
-    if (enablednd) {
+    if (!disablednd) {
         jQuery(canvas).mousedown(function(e){
             jQuery('.actions').hide();
 
